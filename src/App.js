@@ -1,12 +1,16 @@
-import React from 'react';
-import Nav from "./Components/Nav";
+import './App.css';
+import Footer from './components/Footer';
+import Main from './pages/Main';
+import Nav from './components/Nav';
 
 function App() {
-	return (
-		<React.Fragment>
-			<Nav />
-		</React.Fragment>
-	);
+  return (
+    <>
+      <Nav/>
+      <Main/>
+      <Footer/>
+    </>
+  );
 }
 
 export default App;

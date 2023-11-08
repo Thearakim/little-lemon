@@ -1,38 +1,32 @@
-import React from 'react';
-import { useRef, useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
-import "../Styles/main.css";
+import React, { Component } from 'react';
+import logo from "../icon_assests/Logo.svg";
 
-function Navbar() {
-  const navRef = useRef();
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleNav = () => {
-    setIsOpen(!isOpen);
-    navRef.current.classList.toggle("responsive_nav");
-  };
-
-  return (
-    // JSX
-  <header>
-    <div className="logo">
-        <h3>LOGO</h3>
-    </div>
-    <nav ref={navRef} className={isOpen ? "responsive_nav" : ""}>
-        <a href="/#">Home</a>
-        <a href="/#">My work</a>
-        <a href="/#">Blog</a>
-        <a href="/#">About me</a>
-        <button className="nav-btn nav-close-btn" onClick={toggleNav}>
-            <FaTimes />
-        </button>
-    </nav>
-    <button className="nav-btn" onClick={toggleNav}>
-        {isOpen ? <FaTimes /> : <FaBars />}
-    </button>
-  </header>
-
-  );
+export default class Nav extends Component {
+    render() {
+        return (
+            <nav className='navbar'>
+                <img src={logo} alt='logo'></img>
+                <ul className='navLinks'>
+                    <li>
+                        <a href='/'>Home</a>
+                    </li>
+                    <li>
+                        <a href='/'>About</a>
+                    </li>
+                    <li>
+                        <a href='/'>Menu</a>
+                    </li>
+                    <li>
+                        <a href='/reservations'>Reservations</a>
+                    </li>
+                    <li>
+                        <a href='/'>Order Online</a>
+                    </li>
+                    <li>
+                        <a href='/'>Login</a>
+                    </li>
+                </ul>
+            </nav>
+        )
+    }
 }
-
-export default Navbar;
