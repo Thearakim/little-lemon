@@ -1,10 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Nav from "./Components/Nav";
 
 function App() {
-  return (
-    
-  );
+	return (
+		<React.Fragment>
+			<Nav />
+		</React.Fragment>
+	);
 }
 
 export default App;
